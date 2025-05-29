@@ -1,3 +1,4 @@
+
 # 🧊 ColdConnect – API para Gestão de Emergências em Situações de Frio Extremo
 
 A **ColdConnect** é uma API RESTful desenvolvida com Java + Spring Boot, projetada para monitorar temperaturas críticas, emitir alertas automáticos e coordenar ações emergenciais para proteger populações vulneráveis em situações de frio intenso.
@@ -61,66 +62,70 @@ Respondem com informações, observações e atualização de status:
 POST /respostas
 ```
 
-📦 Tecnologias Utilizadas
-Java 17
+---
 
-Spring Boot 3.5
+## 📦 Tecnologias Utilizadas
 
-Spring Web, JPA, Validation e Security
+- **Java 17**
+- **Spring Boot 3.5**
+- **Spring Web, JPA, Validation e Security**
+- **MapStruct** – Mapeamento entre entidades e DTOs
+- **Lombok** – Redução de boilerplate
+- **H2 Database** – Banco em memória para testes
+- **Swagger/OpenAPI** – Documentação automática
+- **Camadas: Controller / Service / Repository / DTO / Mapper / Model**
 
-MapStruct – Mapeamento entre entidades e DTOs
+---
 
-Lombok – Redução de boilerplate
+## 💡 Lógica de Negócio
 
-H2 Database – Banco em memória para testes
-
-Swagger/OpenAPI – Documentação automática
-
-Camadas: Controller / Service / Repository / DTO / Mapper / Model
-
-💡 Lógica de Negócio
 A API não é apenas CRUD. Ela aplica lógica automatizada no backend para reagir a eventos em tempo real:
 
-Leituras de temperatura disparam alertas automáticos;
+- **Leituras de temperatura** disparam **alertas automáticos**;
+- **Ações emergenciais** são criadas com base na gravidade do alerta;
+- **Solicitações e respostas** são atualizadas com o status correto da operação;
+- A **região geográfica** é deduzida com base na latitude recebida.
 
-Ações emergenciais são criadas com base na gravidade do alerta;
+---
 
-Solicitações e respostas são atualizadas com o status correto da operação;
+## 🛡️ Segurança
 
-A região geográfica é deduzida com base na latitude recebida.
+- **Spring Security configurado** com acesso livre durante testes (`permitAll`).
+- Ideal para evoluir com autenticação via JWT ou OAuth2.
 
-🛡️ Segurança
-Spring Security configurado com acesso livre durante testes (permitAll).
+---
 
-Ideal para evoluir com autenticação via JWT ou OAuth2.
+## 🔍 Documentação da API
 
-🔍 Documentação da API
 Após rodar o projeto, acesse:
 
-Swagger UI: http://localhost:8080/swagger-ui.html
+- Swagger UI: `http://localhost:8080/swagger-ui.html`
+- Documentação JSON: `http://localhost:8080/api-docs`
 
-Documentação JSON: http://localhost:8080/api-docs
+---
 
-🧪 Como rodar
-Clone o repositório:
+## 🧪 Como rodar
 
-bash
-Copiar
-Editar
-git clone https://github.com/seuusuario/ColdConnect.git
-Abra no VS Code ou Eclipse com suporte ao Maven.
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seuusuario/ColdConnect.git
+   ```
 
-Execute o projeto como aplicação Spring Boot.
+2. Abra no VS Code ou Eclipse com suporte ao Maven.
 
-Acesse http://localhost:8080 para testar os endpoints.
+3. Execute o projeto como aplicação Spring Boot.
 
-🔮 Possíveis Melhorias Futuras
-Autenticação JWT e controle de usuários
+4. Acesse `http://localhost:8080` para testar os endpoints.
 
-Integração com sensores reais (IoT, MQTT, etc)
+---
 
-Notificações via SMS, WhatsApp ou Firebase
+## 🔮 Possíveis Melhorias Futuras
 
-Painel web com visualização geográfica dos alertas
+- Autenticação JWT e controle de usuários
+- Integração com sensores reais (IoT, MQTT, etc)
+- Notificações via SMS, WhatsApp ou Firebase
+- Painel web com visualização geográfica dos alertas
+- Machine Learning para prever alertas com base em histórico climático
 
-Machine Learning para prever alertas com base em histórico climático
+---
+
