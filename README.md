@@ -117,6 +117,8 @@ Após rodar o projeto, acesse:
 
 4. Acesse `http://localhost:8080` para testar os endpoints.
 
+5. [Clique aqui para baixar o .txt com os endpoints para colocar no postman](postman.txt)
+
 ---
 
 ## 🔮 Possíveis Melhorias Futuras
